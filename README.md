@@ -22,3 +22,19 @@ unidade05: não estava presente. Talvez tenha sido apagada?
 unidade06: teste inicial do PHP, função "echo" e multiplicação simples
 
 unidade07: variáveis em PHP, strings, funções para strings, funções numéricas
+
+unidade08: array - como funciona, funções para arrays, pesquisa em arrays
+
+unidade09: if e else; switch - case; operador ternario. Operadores lógicos (|| e &&)
+
+unidade10: estruturas de repetição - while, do-while, for e foreach
+
+unidade11: funções
+
+unidade12: getDate e formatação de data e hora
+
+unidade13: passando parâmetros para variáveis em links -> "index.php?variavel="valor"
+
+unidade14: manipulações de valores obtidos em formulários
+
+unidade15: conclusão
