@@ -7,11 +7,11 @@
 </head>
 
 <body>
-    <?php include("curso1.php"); ?>
+    <?php require("curso0.php"); ?>
     <?php echo "<br>"; ?>
-    <?php include("curso2.php"); ?>
+    <?php require("curso1.php"); ?>
     <?php echo "<br>"; ?>
-    <?php include_once("curso1.php"); ?>
+    <?php require("curso2.php"); ?>
     
 </body>
 </html>
