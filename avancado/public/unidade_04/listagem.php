@@ -1,5 +1,13 @@
 <?php require_once("../../conexao/conexao.php"); ?>
+<?php
+    // Consulta ao banco de dados
+    $query = "SELECT produtoID, nomeproduto, tempoentrega, precounitario, imagempequena \n FROM produtos ";
+    $resultado = mysqli_query($conecta,$query);
+    if (!$resultado) {
+        die("Falha na consulta ao banco de dados.");
+    }
 
+?>
 <!doctype html>
 <html>
     <head>
@@ -9,14 +17,28 @@
         
         <!-- estilo -->
         <link href="_css/estilo.css" rel="stylesheet">
+        <link href="_css/produtos.css" rel="stylesheet">
     </head>
 
     <body>
         <?php include_once("../_incluir/topo.php"); ?>
         <?php include_once("../_incluir/funcoes.php"); ?>
         
-        <main>  
-            
+        <main>
+            <div id="listagem_produtos">
+                <?php
+                    while($linha = mysqli_fetch_assoc($resultado)) {
+                ?>
+                <ul>
+                    <li class="imagem"><img src=<?php echo $linha["imagempequena"] ?>></li>
+                    <li><h3><?php echo $linha["nomeproduto"] ?></h3></li>
+                    <li>Tempo entrega: <?php echo $linha["tempoentrega"] ?></li>
+                    <li>Preço unitário: <?php echo real_format($linha["precounitario"]) ?></li>
+                </ul>
+                <?php
+                    }
+                ?>
+            </div>
         </main>
 
         <?php include_once("../_incluir/rodape.php"); ?> 
