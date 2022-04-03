@@ -2,9 +2,7 @@
 <?php
     session_start();
 
-    if (!isset($_SESSION["usuario"])) {
-        header('Location: pagina1.php');
-    }
+
 ?>
 <!doctype html>
 <html>
@@ -22,7 +20,12 @@
         
         <main>
             <?php
-                echo $_SESSION["usuario"];
+
+                if (isset($_SESSION["usuario"])) {
+                    echo $_SESSION["usuario"];
+                } else {
+                    echo '<a href="login.php">Ir para a página de login</a>';
+                }
             ?>
 
         </main>
