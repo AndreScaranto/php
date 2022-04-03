@@ -1,4 +1,11 @@
 <?php require_once("../../conexao/conexao.php"); ?>
+<?php
+    session_start();
+
+    if (!isset($_SESSION["usuario"])) {
+        header('Location: pagina1.php');
+    }
+?>
 <!doctype html>
 <html>
     <head>
@@ -14,6 +21,9 @@
         <?php include_once("../_incluir/funcoes.php"); ?>
         
         <main>
+            <?php
+                echo $_SESSION["usuario"];
+            ?>
 
         </main>
 
